@@ -1,0 +1,18 @@
+<header>
+  <!-- Main navigation -->
+  <div class="site__logo" fxLayout fxLayoutAlign="center center">
+    <a class="site__link" routerLink="/" fxLayout>{{ title }}</a>
+  </div>
+  <nav class="main-nav">
+    <ul class="main-nav__list">
+      <li class="main-nav__item"><a routerLink="/" class="main-nav__link">Home</a></li>
+      <li class="main-nav__item"><a routerLink="order/" class="main-nav__link active">Order</a></li>
+      <li class="main-nav__item"><a routerLink="login/" class="main-nav__link">Login</a></li>
+    </ul>
+  </nav>
+  <!-- End Main navigation -->
+</header>
+
+<!-- Content -->
+<router-outlet></router-outlet>
+<!-- End Content -->

@@ -1,0 +1,61 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+
+// Colors
+$bg: #373A3C;
+$pri: #1C7CD5;
+$text-lt: #ffffff;
+$text-dk: #000000;
+
+$radius: 10px;
+
+// Mixin
+@mixin nmp {
+  margin: 0;
+  padding: 0;
+}
+
+// Global
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  @include nmp;
+
+  background-color: $bg;
+  color: $text-dk;
+  font-family: Nunito;
+  font-size: 16px;
+  font-size: 1em;
+  height: 100%;
+  line-height: 1.2em;
+}
+
+.cta {
+  background-color: $pri;
+  border: 3px solid rgba(0, 0, 0, 0);
+  border-radius: 8px;
+  color: $text-lt;
+  font-weight: bold;
+  font-size: 1em;
+  margin-bottom: 1em;
+  padding: 1em 3em;
+
+  &:hover {
+    background-color: $text-lt;
+    border-color: $pri;
+    color: $pri;
+  }
+}
+
+.submit {
+  display: block;
+  font-size: 1.5em;
+  margin: 2em auto;
+}

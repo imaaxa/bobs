@@ -1,0 +1,54 @@
+// Colors
+$bg: #373A3C;
+$pri: #1C7CD5;
+$text-lt: #ffffff;
+$text-dk: #000000;
+
+// Styles
+header {
+  background-color: darken($bg, 10);
+  color: $text-lt;
+  display: flex;
+  line-height: 2em;
+}
+
+.site {
+
+  &__link {
+    font-size: 1.5em;
+    color: $text-lt;
+    padding: .5em .75em;
+    text-decoration: none;
+  }
+}
+
+.main-nav {
+  color: $text-lt;
+
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item {
+
+  }
+
+  &__link {
+    border-bottom: 2px solid rgba(0,0,0,0);
+    color: $text-lt;
+    font-size: 1.25em;
+    margin: 0;
+    padding: .5em 1em;
+    text-decoration: none;
+
+    &:hover {
+      border-bottom-color: $pri;
+      color: $pri;
+    }
+
+    &.active {
+      border-bottom-color: $pri;
+    }
+  }
+}
