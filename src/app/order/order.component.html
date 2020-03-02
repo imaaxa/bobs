@@ -1,13 +1,18 @@
 <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
   <ul class="card__wrapper" *ngIf="products">
-  <li *ngFor="let product of products; let i = index">
-      <div class="card">
+  <li *ngFor="let product of products">
+      <div class="card" [class.selected]="tempstore1 > -1">
         <div class="card__image-wrapper">
-          <img src="../../assets/products/{{ product.image }}" alt="{{ product.service }}" class="card__image">
+          <img src="../../assets/products/{{ product.src }}" alt="{{ product.service }} Logo" class="card__image">
         </div>
         <h2 class="card__title">{{ product.service }}</h2>
         <p class="card__cost">{{ product.price | currency }}</p>
-        <button value="{{ i }}" class="cta card__button">Add to list</button>
+        <ng-template [ngIf]="tempstore1 < 0" [ngIfElse]="add">
+          <button value="{{ product.nid }}" class="cta card__button" (click)="changeOrder(product.nid)">Add item</button>
+        </ng-template>
+        <ng-template #add>
+          <button value="{{ product.nid }}" class="cta card__button" (click)="changeOrder(product.nid)">Remove item</button>
+        </ng-template>
       </div>
     </li>
   </ul>
