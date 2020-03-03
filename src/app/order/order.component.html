@@ -1,21 +1,23 @@
-<form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
-  <ul class="card__wrapper" *ngIf="products">
-  <li *ngFor="let product of products">
-      <div class="card" [class.selected]="tempstore1 > -1">
-        <div class="card__image-wrapper">
-          <img src="../../assets/products/{{ product.src }}" alt="{{ product.service }} Logo" class="card__image">
+<article class="content">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+    <ul class="card__wrapper" *ngIf="products">
+    <li *ngFor="let product of products">
+        <div class="card" [class.selected]="tempstore1 > -1">
+          <div class="card__image-wrapper">
+            <img src="../../assets/products/{{ product.src }}" alt="{{ product.service }} Logo" class="card__image">
+          </div>
+          <h2 class="card__title">{{ product.service }}</h2>
+          <p class="card__cost">{{ product.price | currency }}</p>
+          <ng-template [ngIf]="tempstore1 < 0" [ngIfElse]="add">
+            <button value="{{ product.nid }}" class="cta card__button" (click)="changeOrder(product.nid)">Add item</button>
+          </ng-template>
+          <ng-template #add>
+            <button value="{{ product.nid }}" class="cta card__button" (click)="changeOrder(product.nid)">Remove item</button>
+          </ng-template>
         </div>
-        <h2 class="card__title">{{ product.service }}</h2>
-        <p class="card__cost">{{ product.price | currency }}</p>
-        <ng-template [ngIf]="tempstore1 < 0" [ngIfElse]="add">
-          <button value="{{ product.nid }}" class="cta card__button" (click)="changeOrder(product.nid)">Add item</button>
-        </ng-template>
-        <ng-template #add>
-          <button value="{{ product.nid }}" class="cta card__button" (click)="changeOrder(product.nid)">Remove item</button>
-        </ng-template>
-      </div>
-    </li>
-  </ul>
-  <button class="cta submit" type="submit">Submit Order</button>
-</form>
-<!-- Form end -->
+      </li>
+    </ul>
+    <button class="cta submit" type="submit">Submit Order</button>
+  </form>
+  <!-- Form end -->
+</article>

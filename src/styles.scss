@@ -29,12 +29,24 @@ body {
   @include nmp;
 
   background-color: $bg;
+  background-image: url('assets/global/background.png');
+  background-repeat: no-repeat;
+  background-blend-mode: hard-light;
   color: $text-dk;
   font-family: Nunito;
   font-size: 16px;
   font-size: 1em;
   height: 100%;
   line-height: 1.2em;
+}
+
+.content {
+  border-radius: $radius;
+  color: #ffffff;
+  line-height: 1.5em;
+  margin: 1em 2em;
+  padding: 1em 2em;
+  background-color: transparentize($bg, .1);
 }
 
 .cta {

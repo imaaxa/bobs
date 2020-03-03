@@ -20,7 +20,7 @@ export class OrderComponent implements OnInit {
 
   tempstore1 = -1;
 
-  constructor( private store: Store<State> ) { }//private store: Store<State>
+  constructor(  ) { }//private store: Store<State>
 
   ngOnInit() {
   }

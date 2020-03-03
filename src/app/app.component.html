@@ -5,9 +5,15 @@
   </div>
   <nav class="main-nav">
     <ul class="main-nav__list">
-      <li class="main-nav__item"><a routerLink="/" class="main-nav__link">Home</a></li>
-      <li class="main-nav__item"><a routerLink="order/" class="main-nav__link active">Order</a></li>
-      <li class="main-nav__item"><a routerLink="login/" class="main-nav__link">Login</a></li>
+      <li class="main-nav__item">
+        <a routerLink="/" class="main-nav__link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      </li>
+      <li class="main-nav__item">
+        <a routerLink="/order" class="main-nav__link" routerLinkActive="active">Order</a>
+      </li>
+      <li class="main-nav__item">
+        <a routerLink="/login" class="main-nav__link" routerLinkActive="active">Login</a>
+      </li>
     </ul>
   </nav>
   <!-- End Main navigation -->
