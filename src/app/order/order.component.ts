@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { State } from '../reducers/index';
 
 @Component({
   selector: 'app-order',
@@ -20,14 +18,13 @@ export class OrderComponent implements OnInit {
 
   tempstore1 = -1;
 
-  constructor(  ) { }//private store: Store<State>
+  constructor(  ) { }
 
   ngOnInit() {
   }
 
   changeOrder(nid) {
     console.log(nid);
-    //this.store.dispatch(new AddToOrder(nid));
   }
 
   onSubmit(formData) {
